@@ -51,3 +51,57 @@ console.log("== str1.length:", str1.length);
 console.log("== str1[5]:", str1[5]);
 str1[5] = 'x';
 console.log("== str1:", str1);
+
+console.log("== 'decathlon'.indexOf('cat'):", 'decathlon'.indexOf('cat'));
+console.log("== 'team'.indexOf('i'):", 'team'.indexOf('i'));
+
+var foxString = "The quick brown fox jumped over the lazy cat.";
+console.log("== foxString.replace('cat', 'dog'):", foxString.replace('cat', 'dog'));
+console.log("== foxString:", foxString);
+
+console.log("\n========================");
+console.log("== Arrays");
+console.log("========================");
+
+var array = [ 1, '2', [ 5, 6, 7 ], function () {} ];
+console.log("== array:", array);
+console.log("== array.length:", array.length);
+for (var i = 0; i < array.length; i++) {
+  console.log(" --", array[i]);
+}
+
+function arrayElementPrintingFunction(k) {
+  console.log("== The array element is:", k);
+}
+
+array.forEach(function (elem) {
+  // console.log("== This is printed once for each thing in array");
+  console.log(" -- elem:", elem);
+});
+array.forEach(arrayElementPrintingFunction);
+
+console.log("\n========================");
+console.log("== Functions");
+console.log("========================");
+
+function addMyArguments(a, b, c) {
+  var result = a + b + c;
+  if (arguments[3]) {
+    result += arguments[3];
+  }
+  return result;
+}
+
+console.log("== addMyArguments(2, 4, 6):", addMyArguments(2, 4, 6));
+console.log("== addMyArguments('2', '4', '6'):", addMyArguments('2', '4', '6'));
+console.log("== addMyArguments(2, 4, '6'):", addMyArguments(2, 4, '6'));
+
+console.log("== addMyArguments('2', '4'):", addMyArguments('2', '4'));
+console.log("== addMyArguments('2', '4', '6', '8'):", addMyArguments('2', '4', '6', '8'));
+
+var z = 16;
+function foo() {
+  z = 32;
+}
+foo();
+console.log("== z:", z);
