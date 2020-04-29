@@ -105,3 +105,28 @@ function foo() {
 }
 foo();
 console.log("== z:", z);
+
+console.log("\n========================");
+console.log("== Objects");
+console.log("========================");
+
+// var person = {
+//   "firstName": "Luke",
+//   "lastName": "Skywalker"
+// };
+var person = {
+  firstName: "Luke",
+  lastName: "Skywalker",
+  movies: [ 3, 4, 5, 6, 7, 8, 9 ],
+  lightSaber: {
+    color: "blue",
+    length: 3
+  },
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+};
+console.log("== person:", person);
+console.log("== person['firstName']:", person['firstName']);
+console.log("== person.firstName:", person.firstName);
+console.log("== person.getFullName():", person.getFullName());
